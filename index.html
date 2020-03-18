@@ -32,13 +32,29 @@
   </head>
   <body >
     <div data-server-rendered="true" id="app" class="layout">
-<header id="c-masthead" class="c-masthead">
+      <script>
+       $(document).ready(function(){
+          $(".c-masthead__toggle").click(function(){
+            $(".c-masthead__menus").addClass("is-expanded");
+          });
+          $(".c-masthead__close").click(function(){
+            $(".c-masthead__menus").removeClass("is-expanded");
+          });
+
+          $(".blog").click(function(){
+            $(".c-masthead__sub-menu").toggleClass("is-expanded");
+          });
+        });
+      </script>
+
+
+<header id="c-masthead" class="c-masthead is-transparent">
    <div class="l-container l-container--gutters l-container--masthead">
       <nav class="c-masthead__nav">
          <div class="c-masthead__logo">
             <a href="#" class="active--exact active">
-               <img alt="Logo" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 107 30' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-8717f02fff0bd48e7779d058e7386230'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='40'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-8717f02fff0bd48e7779d058e7386230)' width='107' height='30' xlink:href='data:image/svg%2bxml%3bbase64%2ciVBORw0KGgoAAAANSUhEUgAAAEAAAAASCAYAAADrL9giAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGpklEQVRYw8VXa2xURRTe3baooNQfGm0LTds7s9t93LvbohYoCQaDLe3eR3lWUSKJQUQ0GF8x4OuHhqgxGpCIMcbUHyItDw0EGv2j0UQBMVEMP8VojC9EQKD0tX4zc2b33rW7YEJwk5OZO%2bfMzJlvvnPObCh0CX6mzcK6z5bGK02XdVoOe990%2bBtS7/GQ5fDQ5f6lsizop2M0wLdHTId9Cd9mX5pNHHV4tLWWy17A4kctl%2bdmLIvn0N%2btAGDhyw1A0jNCcxa0qoO7LIsL2QN//sosiuYyC6O5lM0uDQBANaxY0DQNG/zasjiWw2bD6Z4oWt5PDPhfAEhnoxHlI3uqdWlzTlwMZBjf4ymbt0tD3FrYdOGgbKXocQgPgyp5nSWFB/TKhlXRRh1qEzaSBsr4HiAAIlgnL2CLXKOlKxpquKsW4cFCCSemGGUzsY5YM1IQHk71NKmDiX0vwj66vE6MFy7KZfvlpcA34SPmtZdEz3JZWXQ1CP8KB9eIYaMTYgMBAG59oOQaNpfMSds8lF4U0%2bEUKc00HmlbWi37OMhF2feulL5qFrwi6F8AoMCAWjhag7YGztcknaZKuYnHq2BYi4nQ8Rpq6yCT5TyPTzbFt8NuhG56qisVAQAJ9E9qANDfJWxji5uvgEPdkAchnfGuxklyDaeQPLWjFFYm5q6GPA3pSmSjV6sD83DXF%2b3/yR7nCBMgr4vYx7wgAJhwQNLWYX/jUDmAsI6AmWpRQoPNGbSjaH%2bBMHI%2bCTlFMXUWlSAFABrRPy3mZBQD%2biyb1WPNQ4J%2b6Z48MAdM15iuqGmEsa%2b%2bJQvykbLhh9B/Ge1ZtD9hjYUyBLqFPcW2zdLaHr4cnMge/QpqNykAihgAw8cyi2IyOQgDfH%2bd8JqupEnPyaTmIqkpp74T4609GlW2oxXZHpt/SiGQzDPAk8B9BvmxdVlzjuJvXKzVsiQmdHvEnIwXixDgN2PsT5Gs0H4T92JT6ObWygTmyUuyC6XXEPYntH3Ka5w8gb3jC4lNEzIATtfh0MflBJG84CioIzdK2iyubxS6MSwyDt08XwlckFksD3Ov%2bjYsrHWSsu04xofwvRF2N6H/JGRMgIB1RolZCTGvbT6rgLOHhIME3MM%2begtWnM4o5hxMdNZXtK0QZZUd9tmvK2Wf6m6YRJe1eUIASPmWYAGcHRKJAu0un%2b5dmjgkbRz%2bjtYlPHY9bL/CoRoJzFQwB/DdRYlpO%2b1zXgBt2vwO2sNVFwBgZBhGk3mQbUOU15%2blPUIRNy/C7DbFKGVvlbY/BfsM7bGlHABzVB7gY3QziGnDJN1yyugjlCtOpVzWRLS9G4d521cFAkkQtv20xlUEwKMqpPh5cnAN6Z%2bncVmjIfuw3w4h6A8Kf4iFmGMY%2bH5ChNGF7NGOAJCZZQFo6GzQIHxSdNMbafxNojRuho%2bQbgPpduKQXYWQAABuoAoMUMKsUqWPrVZ5hg9TTrif9FuKAFiOMjkXSW4%2b2nmQWWDLTIteb5j3WtCe31lsD5mJ7zb4dE3ZEPBlyXtU3Cjn0B7FW/oWjPdD1hPlKBki49oyrgfTLquqzzYUGOAGGDBAa1dR4rqPnBgOMoC/pG6UDdF4R/nXJ3uRkvMQAdlx4RdriSSoa7FlG9Xo/5BW2VPcwjnIt4Ju5jJWhYP9QXE6JnIF6R6iSjKJGJAsegfs8DNA1OogAFwDsDIPsALgSNph15b5/7EiHQTyCC6keuI/RJySIN9cogqwAguQsWVJdPh5FUOgmK0ytaCpKpdsWJUYfsbKsjo/i2QZDL4E%2b/0MAMirigBYRY%2baG8Qbg94h%2blCH0e/AmtfhcVYNh6MY24BQqIF%2bKvz47UL2qFjrsUd9MQCmegrP9lMqQgCIA5yD46N%2bCqvsykXdHc2/FxzWp%2bbwiJ6PjeP60UROfUjg6VK0hpw45w8B0j2QUXE9rpOktHHZ79Ada1HldrPPfq20d8rYuwH7rcSaIQFcIQRsQ72vHa5B%2bEDEIx3SVc9iVkmLDLYsaVb0dtl8OlwF3gv6UfWejGWPGCBrNHdJNw1gfS9ZhHEqh8cgtT4nn8nPdWVFGhOHon%2bYffG59epPVE9cP8SeLWWPdfuSC5si5GO7qAgZ8onA/DjV3VgZSixJhGZkWZ4FwhiyX2R/0zOmBBOlcTt0%2b/D9alLrXKafsSiBfJf4A4T%2bdvS3wXYv%2brqa9FqyRMnxftXyQYDSKw9FuQiJ8lbod8L%2buMpD/HPQtTf/nwF2yDX%2bv%2bNl7WnO49gLpZJtE76hD//YXqwz6x9EZa01dER1ygAAAABJRU5ErkJggg==' /%3e%3c/svg%3e" width="107" data-src="/assets/static/wheel.2f9d6d0.ceedea2ef53acaebc23f60aec9074de4.svg" data-srcset="/assets/static/wheel.2f9d6d0.ceedea2ef53acaebc23f60aec9074de4.svg 107w" data-sizes="(max-width: 107px) 100vw, 107px" class="g-image g-image--lazy g-image--loading">
-               <noscript><img src="assets/static/wheel.2f9d6d0.ceedea2ef53acaebc23f60aec9074de4.svg" class="g-image g-image--loaded" width="107" alt=""></noscript>
+               <!-- logo -->
+               <noscript><img src="assets/static/wheel.2f9d6d0.ceedea2ef53acaebc23f60aec9074de4.svg" class="g-image g-image--loaded" width="107" alt="Wheel"></noscript>
             </a>
          </div>
          <div class="c-masthead__utilities"><button class="c-masthead__toggle"><span class="h-visually-hidden">Menu</span><span class="c-masthead__toggle-icon"></span></button><a class="c-button c-button--small c-button--solid c-button--solid-green c-button--masthead-utility c-button--masthead-utility-sign-up"><span class="c-button__inner c-button__inner--small c-button__inner--solid c-button__inner--solid-green c-button__inner--masthead-utility c-button__inner--masthead-utility-sign-up">
@@ -50,16 +66,18 @@
          <div class="c-masthead__menus">
             <div class="l-container l-container--gutters">
                <button class="c-masthead__close">
-                  <span class="h-visually-hidden">Close</span><img alt="&amp;times;" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-819fb2ada88b41483259b65844deed36'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='40'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-819fb2ada88b41483259b65844deed36)' width='14' height='14' xlink:href='data:image/svg%2bxml%3bbase64%2ciVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKOElEQVR42u2bC3CUVxXHtzbySIKGEJKQ1xJCwhtCHptkkxACIQnPIFrU1ITQBtSO1rFYaHHG2rGOLVQsdXRG0aYtAs4oBFpabahjVWoFhVortY%2bZFigK4iMQHoWUJv7%2bmbOdj5XUNNkNwd2dObOve%2b93zv%2be8z/n3u%2b7LpfLFYeMQJLGjh07PTMz81OpqanrExMTmxMSElqSkpIeHTNmzO3Z2dmzaJOAfMD1P16dnZ3/Jb159WGcuNzc3BkZGRm3JScnN2HHz7FnR0pKyv3Yssztdnto40ZGucz44UgiHbIB4EYAWGcAPAUAj9DpSwAwkzYjg6x4oMaJzcvLK8WeLwLAQ9jxMwNgPbbUp6Wl5dEmzSbUlSTjhcj48eM9ANAAABvo8BjyNABsodOdAFDF/%2bo0dIADMGjatGnJeEAFAKwGgM3Y0YLsAoBvYcvNSDHtMrtAkNvzQ/a4ceM8EyZMmC/UaLhp1KhRT9PptwDw2OjRo9dPmjSp3uv1FsyaNSu9oKBgRHR0dCQDRPTWmN626eYVERsbO3TOnDnDFyxYkDZz5sy8KVOm3Jienn4vADRjx15kD3b9gN9WZWVl1WCzt8sT5PJILUAsk/HExwN0ehwADtLpJQB4Do/4Mf/dAwg35efnz%2bVCOQ0NDSkzZsyIGggAlJeXR61YsSJl7ty52UxOFcY3YM/dGLgV/Z/FjkPYcwC7dvPbgwIBAG5C6lyKd%2bQ%2b5Jsg9H2H8W8if%2bfzGwyyn/%2ba8YRvA9YaXGxpRUVF7vz58%2bMGAgDSg0nJJUxvQL/V6Pkg9uxA733o/zp2nECOyi7ZJ09QOIgTXCIHZDuykwZ7hJQaI2eQC8hZAYH8hf9%2bRacfge6XibGF1dXVGYq5qwzAoKqqqgzpg15rMXwzej4jfc1wnx1tBsIB2SlOkO0upQhjyRaLlUPWUZ06%2ba8zPj7%2bbeQ0nw/TeS9u9D344jMlJSVFeIMIdDBynSl0XZAZ3nmdwbq%2b9JA%2b0kv6SU/pi1yS/rLD7Dlh9snOFtntwiUexlWaxJa8NytmzG3OqLNPGEwiFF%2bj7RPEz33EWn1RUVHJ7Nmzx82bNy%2bB%2bIvuKTH2AYDri4uLo2pqauKZ%2bUw%2bF0%2bdOrUOjroX73wC/V6VntLXqb882cJZxL4Tkb1NLhULIj8MWiPWNOLYR4fjmnk/EIToPxjoj4ox2t8Po36eWfhIaWlp/uLFi1NQcEiQARhUW1ubRDbKzcnJqSE136LJQJ%2bfovdB9Dvpm3mH3u/od/7/vQgdjlhHnzuQ21yqmJBS5U2lDrGnjFMGkBuNHDnyMiSR8wIHEP7EgC2g3sRAd02ePPnjZIVsFIwJMgDDILwpgP4xcRETtgmPfBJdnkevv6LfOae%2b0h8Rj72Krrssm9VBmJVImctK4VgVD2VlZcqfy0BoIwb%2bkgHesFhyeoLQvIC08vthBt6PAlsZ%2bI7p06dXA6TbOCEYAETgaSkej6cCtl/FRD2Kns%2biy2vyTJucS46Z78D4c7wfU9wD1ncnTpx4M2FbaEXdZZXtIBURxHGlUokN/hshJ/cRss7BDdnzDP4m7X7N4N%2bBiBrp7zUQYiwcInpKjN0Q3vWWaYbJeLzMg7c1MEkPMOu/sElq83N7TdJbyL8Q8dnvmCTVMmsJm3kUSulXrGghs%2bGktmzlU6UUsSpus1uxZe513t%2b9uLDSzCvKr3DCOoEgT0DZ7EWLFqVSkw/rAwAuxolSzMvtNfMyHkO%2bzgQ1A/yfuX4renT4kV4X41uYPkXbHxKmX6HvJzE%2bl3FGXPFiUVFRQxsbG1NU5PBagDGfFruKYBjsebmZkHZezMLjJP%2b/IBDkCQoHLvYJCNoDqIk9WUF25wEQa7wITzEvt9fMy3gMU73yNwtH/0lpRZ8XmbydRtSfI1MsBkzP0qVL02JiYrqtYCPIqVGUlHEqLpRflWLEsiIaxZrcTYg7LtphnnEShV5WONB2Gxe%2bCz75KBedwLiRvQRgsFKd2F6Ep7CU22vmZbxSm7m7MywV84dptwewNhDzy5lx1CjNQhKYWKXqD/Z0VZWoPKtUI7Y1wlHMtRry71ix1GHF0hlxgogR9B9mxr7A2qGMhVay8cH7CYWrff3AzgDelIUt8Sj1XjMQQftIrhlXWVk5EDywzzG4yxmDGORZsmRJ6nsoNGT58uXJcFBONxz0z37moMCxMEB0sTBpLIe2sVe6Fn0%2bTBaaRhZSkXPnQMhCgczD23x52Ov1pl%2bhWIrA9VOtDrm93%2bqQq1CJNQJAISGRZkoqHD4EWSWXl5fn%2bypRwO2XSrRfanEUVS3%2biq8Wx4PqULQSIIuYsfxCXgKVMWsB9qsAq/2JQ/Q75Ud4AV%2bLBHo19m6x5L%2bK1KaKdpYAbJvaA94ayPFW5BatKFV%2bA8433G73FgB9zgj2YrBXo8FYj/tSVXfrcfHBbtpuQx7RDNq7vj%2buPUjbj2izFOfzpI5g7EcEe0em3WcEircjrcgRRHWE0uh%2bZJ%2b9H7Dfj1i7dl%2be1zjB2pEKyp4cs6g9uZesWGozYy5ZZlAVp82WY8hR5Ii9H%2bP3E8gpX5WHvG17esc1nmNPcm0w9iR7vSurtYMWUH67stsVy%2bbO/zbjZdg5S5unryD6XantosX/afqrqtynusOxK32DrqfrBnJXutcAYHikKjgVMcrj2pdH0btFaNqDA4DDNvPnDAgfGO0mF%2b37Wxh/AdG7OOCYEafW8l%2bz%2bxLVGJ9dV1eXAvdEDQgAjHiGoGiMihnlc6U0sTpeoFtsL5rbnzbjL/rWEL6dZ/suMATAWUR1xcsA8CRsv540Vw/fFpLqRjPmcNvQCOidqYBtW6moIa/PVkVHzG7FyD%2boYlNet5lWWuzEvd8VA6ILBAPgOJ9fAICfwPhrKXKqACEtiNttgd24pLYp0CJIy1IxvZHdKV9udxrvE8c9iLOkPdUBupOzRbvWAFBid7Fd1wIAQwEgl3X4ZwHgIa0FHAC0O2efGb7MC2y11wUA77qftxkAbgWAQsaNvlYACGkPuHY5IOSzQLgOCFeCIbgWCPnVYHg/ILwjFN4TDO1d4ZC/LxC%2bMxS%2bNxi%2bOxx%2bPiD8hEj4GaHwU2Ih/ZxgaD8pqmeFdcDI71nh7SHzrLDvaXEdMPJ7WvxESDwtrnN1JqF5XqCHJ0Yu/d%2beGLEzQ5JddmbooJ0ZarNOZ6yjzgw9oz2/YN2fvwpnhra7dHLKZINOUzlOjR21XPq67cru0G6vUqTqBJ3SWrhw4bV6amyT2btOJFiPKIZ0jm4VbrTRAcIhcYKIUdlB%2b/06l6fzeStXrkyBiCIHAgDv49ygKtWNslP2ym4XaOW73e48vnhZNCzSn/IEc5O9IkZlB6VInchUsaQTmrwCfmcmmCdHZY/skn2yE4C82J2rzioItEbPEAhCRocKLUZa7O7satUJKpZ6EvMD%2beywzbxX9prdXQen4/XFPKFOnCBiFEsqRapO0MEqVYz9eXe2L6fHpa%2bdHm9ynh6XfbLTjI//D/NfsjMvv%2bd6AAAAAElFTkSuQmCC' /%3e%3c/svg%3e" width="14" data-src="/assets/static/close-x.df86f52.8862ecf99455d0554092c54a7fa0ca52.svg" data-srcset="/assets/static/close-x.df86f52.8862ecf99455d0554092c54a7fa0ca52.svg 14w" data-sizes="(max-width: 14px) 100vw, 14px" class="c-masthead__close-icon g-image g-image--lazy g-image--loading">
+                  <span class="h-visually-hidden">Close</span><img alt="&amp;times;" src="assets/static/close-x.df86f52.8862ecf99455d0554092c54a7fa0ca52.svg" class="c-masthead__close-icon g-image g-image--lazy g-image--loading">
                   <noscript><img src="assets/static/close-x.df86f52.8862ecf99455d0554092c54a7fa0ca52.svg" class="c-masthead__close-icon g-image g-image--loaded" width="14" alt="&times;"></noscript>
                </button>
                <ul class="c-masthead__main-menu">
-                  <li class="c-masthead__main-item"><a href="#" class="c-masthead__main-link active--exact active">Home</a></li>
-                  <li class="c-masthead__main-item"><a href="#" class="c-masthead__main-link">Services</a></li>
-                  <li class="c-masthead__main-item c-masthead__main-item--is-parent">
+                  <li class="c-masthead__main-item"><a href="#" class="c-masthead__main-link active--exact active">For Providers</a></li>
+                  <li class="c-masthead__main-item"><a href="#" class="c-masthead__main-link">For Clinics</a></li>
+                  <li class="c-masthead__main-item c-masthead__main-item--is-parent blog">
                      <a class="c-masthead__main-link c-masthead__main-link--no-href c-masthead__main-link--is-parent">
-                        Contact us
-                        <!-- <svg role="img" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41" class="c-expand-arrow c-expand-arrow--masthead-parent"><path d="M6,7.41l6-6L10.59,0,6,4.58,1.41,0,0,1.41Z" class="c-expand-arrow__path c-expand-arrow__path--masthead-parent"></path></svg> -->
+                        Blog
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41" class="c-expand-arrow c-expand-arrow--masthead-parent">
+                           <path d="M6,7.41l6-6L10.59,0,6,4.58,1.41,0,0,1.41Z" class="c-expand-arrow__path c-expand-arrow__path--masthead-parent"></path>
+                        </svg>
                      </a>
                      <ul class="c-masthead__sub-menu">
                         <li class="c-masthead__sub-item"><a href="#" class="c-masthead__sub-link">Momentum - Clinician Edition</a></li>
@@ -69,11 +87,11 @@
                </ul>
                <ul class="c-masthead__button-menu">
                   <li class="c-masthead__button-item c-masthead__button-item--sign-in"><a href="#" class="c-button c-button--outline c-button--outline-green"><span class="c-button__inner c-button__inner--outline c-button__inner--outline-green">
-                     Sign Up
+                     Sign In
                      </span></a>
                   </li>
                   <li class="c-masthead__button-item c-masthead__button-item--sign-up"><a class="c-button c-button--solid c-button--solid-green"><span class="c-button__inner c-button__inner--solid c-button__inner--solid-green">
-                     Sign In
+                     Get Started
                      </span></a>
                   </li>
                </ul>
@@ -346,12 +364,12 @@
    <div class="l-max-width">
       <div class="l-container l-container--gutters">
          <h2 class="c-sign-up-footer__title c-sign-up-footer__title--clinicians">
-            <div class="heading-inner">Your schedule is about to be yours again.</div>
+            <div class="heading-inner">Find a telepsychiatry job.</div>
          </h2>
          <!---->
          <ul class="c-sign-up-footer__buttons">
             <li class="c-sign-up-footer__button-item c-sign-up-footer__button-item--first"><a class="c-button c-button--solid c-button--solid-white-with-navy c-button--square-arrow c-button--ne-arrow c-button--ne-arrow-navy"><span class="c-button__inner c-button__inner--solid c-button__inner--solid-white-with-navy c-button__inner--square-arrow c-button__inner--ne-arrow c-button__inner--ne-arrow-navy">
-               Clinicians! Join our team
+               Providers! Join our team
                </span></a>
             </li>
             <li class="c-sign-up-footer__button-item c-sign-up-footer__button-item--last"><a href="for-companies/index.html" class="c-button c-button--outline c-button--outline-white"><span class="c-button__inner c-button__inner--outline c-button__inner--outline-white">
@@ -378,8 +396,8 @@
          <nav class="c-footer__nav-grid">
             <div class="c-footer__nav-column c-footer__nav-column--main">
                <ul class="c-footer__menu c-footer__menu--main">
-                  <li class="c-footer__menu-item c-footer__menu-item--main"><a href="#" class="c-footer__menu-link active--exact active">Telemedicine Jobs for Clinicians</a></li>
-                  <li class="c-footer__menu-item c-footer__menu-item--main"><a href="#" class="c-footer__menu-link">Telehealth Staffing for Companies</a></li>
+                  <li class="c-footer__menu-item c-footer__menu-item--main"><a href="#" class="c-footer__menu-link active--exact active">For Providers</a></li>
+                  <li class="c-footer__menu-item c-footer__menu-item--main"><a href="#" class="c-footer__menu-link">For clinics</a></li>
                   <li class="c-footer__menu-item c-footer__menu-item--main"><a href="#" class="c-footer__menu-link">Blog</a></li>
                </ul>
             </div>
