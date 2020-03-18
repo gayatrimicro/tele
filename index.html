@@ -6,7 +6,7 @@
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" href="assets/css/0.styles.1e9d37b3.css" as="style">
-    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preload" href="assets/js/app.faaccc82.js" as="script">
     <link rel="preload" href="assets/js/page--src--pages--index-vue.5bdbb0dc.js" as="script">
     <link rel="preload" href="assets/js/page--src--pages--covid-19-vue_page--src--pages--for-companies-vue_page--src--pages--index-vue.d162b93a.js" as="script">
@@ -334,7 +334,7 @@
             <div class="c-start-columns__grid">
                <div class="c-start-columns__column">
                   <div class="c-start-columns__image c-start-columns__image--1">
-                     <div class="c-start-columns__image-wrapper"><img width="240" height="400" src="assets/images/01-step-parent-image.png" class="lazyload c-start-columns__image-img"></div>
+                     <div class="c-start-columns__image-wrapper" data-aos="fade-up" data-aos-duration="1000"><img width="240" height="400" src="assets/images/01-step-parent-image.png" class="lazyload c-start-columns__image-img"></div>
                   </div>
                   <div class="c-start-columns__text">
                      <h3>Call Us at (888) 688-4161</h3>
@@ -343,7 +343,7 @@
                </div>
                <div class="c-start-columns__column">
                   <div class="c-start-columns__image c-start-columns__image--2">
-                     <div class="c-start-columns__image-wrapper"><img width="240" height="400" src="assets/images/02-step-parent-image.png" class="lazyload c-start-columns__image-img"></div>
+                     <div class="c-start-columns__image-wrapper" data-aos="fade-up" data-aos-duration="1500"><img width="240" height="400" src="assets/images/02-step-parent-image.png" class="lazyload c-start-columns__image-img"></div>
                   </div>
                   <div class="c-start-columns__text">
                      <h3>Our Care coordinator will connect you to the mental health provider.</h3>
@@ -352,7 +352,7 @@
                </div>
                <div class="c-start-columns__column">
                   <div class="c-start-columns__image c-start-columns__image--3">
-                     <div class="c-start-columns__image-wrapper"><img width="240" height="400" src="assets/images/03-step-image.png" class="lazyload c-start-columns__image-img"></div>
+                     <div class="c-start-columns__image-wrapper" data-aos="fade-up" data-aos-duration="2000"><img width="240" height="400" src="assets/images/03-step-image.png" class="lazyload c-start-columns__image-img"></div>
                   </div>
                   <div class="c-start-columns__text">
                      <h3>Get easily accessible and immediate care.</h3>
@@ -446,15 +446,19 @@
     <script src="assets/js/app.faaccc82.js" defer></script><script src="assets/js/page--src--pages--index-vue.5bdbb0dc.js" defer></script><script src="assets/js/page--src--pages--covid-19-vue_page--src--pages--for-companies-vue_page--src--pages--index-vue.d162b93a.js" defer></script>
     <script src='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
     <script src='https://alexandrebuffet.fr/codepen/slider/slick-animation.min.js'></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript">
       $('.slider').slick({
   autoplay: true,
-  speed: 800,
+  speed: 2000,
   lazyLoad: 'progressive',
   arrows: false,
   dots: true,
 }).slickAnimation();
     </script>
+    <script>
+  AOS.init();
+</script>
   </body>
 
 </html>
