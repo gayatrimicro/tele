@@ -479,6 +479,22 @@
       }
     });
   </script>
+  <script type="text/javascript">
+    var lastScrollTop = 0;
+      $(window).scroll(function(event){
+         var st = $(this).scrollTop();
+         if (st > lastScrollTop){
+           $(".c-home-blocks__shape").addClass("down-move");
+          $(".c-home-blocks__shape").removeClass("up-move");
+             console.log('Down');
+         } else {
+          $(".c-home-blocks__shape").addClass("up-move");
+          $(".c-home-blocks__shape").removeClass("down-move");
+           console.log('Up');
+         }
+         lastScrollTop = st;
+      });
+      </script>
   </body>
 
 </html>
