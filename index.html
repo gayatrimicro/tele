@@ -325,7 +325,7 @@
                </div>
             </section>
             
-            <!-- <div class="c-home-blocks__shape c-home-blocks__shape--first"><img alt="" src="assets/static/parallelogram-green.b21028e.a6210f0baae3efabe9959cbe7061c37c.svg" class="c-home-blocks__shape-image c-home-blocks__shape-image--first g-image" style="transform:translateY(0%);"></div> -->
+            <div class="c-home-blocks__shape c-home-blocks__shape--first"><img alt="" src="assets/static/parallelogram-green.b21028e.a6210f0baae3efabe9959cbe7061c37c.svg" class="c-home-blocks__shape-image c-home-blocks__shape-image--first g-image" style="transform:translateY(0%);"></div>
             <div class="c-home-blocks__shape c-home-blocks__shape--second"><img alt="" src="assets/static/parallelogram-light-blue.b21028e.bf108266bbd4ce934196105afa979463.svg" class="c-home-blocks__shape-image c-home-blocks__shape-image--first g-image" style="transform:translateY(0%);"></div>
          </div>
          <div class="c-home__intro c-home__intro--outro">
@@ -465,36 +465,22 @@
           AOS.init();
     </script>
   <script type="text/javascript">
-      $('#elem').on('DOMMouseScroll mousewheel', function (e) {
-      if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
-        //scroll down
-        $(".c-home-blocks__shape").addClass("down-move");
-        $(".c-home-blocks__shape").removeClass("up-move");
-        console.log('Down');
-      } else {
-        //scroll up
-        $(".c-home-blocks__shape").addClass("up-move");
-        $(".c-home-blocks__shape").removeClass("down-move");
-        console.log('Up');
-      }
-    });
-  </script>
-  <script type="text/javascript">
-    var lastScrollTop = 0;
-      $(window).scroll(function(event){
-         var st = $(this).scrollTop();
-         if (st > lastScrollTop){
-           $(".c-home-blocks__shape").addClass("down-move");
-          $(".c-home-blocks__shape").removeClass("up-move");
-             console.log('Down');
-         } else {
-          $(".c-home-blocks__shape").addClass("up-move");
-          $(".c-home-blocks__shape").removeClass("down-move");
-           console.log('Up');
-         }
-         lastScrollTop = st;
-      });
-      </script>
+  var lastScrollTop = 0;
+  var x=-100;
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+    x+= 6;
+    $(".c-home-blocks__shape").css("margin-top",x);
+       console.log('Down');
+   } else {
+    x-= 6;
+    $(".c-home-blocks__shape").css("margin-top",x);
+     console.log('Up');
+   }
+   lastScrollTop = st;
+});
+</script>
   </body>
 
 </html>
