@@ -334,12 +334,38 @@
 
 @media (max-width: 800px) and (min-width: 600px){
   .sec_slid
-{
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 150% !important;
-  z-index: 10000;
-  overflow: hidden;
+    {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 150% !important;
+      z-index: 10000;
+      overflow: hidden;
+    }
+  }
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+    #app{
+    padding-top: 450px !important;
+  }
 }
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { 
+    #app{
+    padding-top: 600px !important;
+  }
 }
+
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation : portrait) { 
+    #app{
+    padding-top: 600px !important;
+  }
+}
+
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1440px) and (orientation : landscape) { 
+    #app{
+    padding-top: 700px !important;
+  }
+}
+
+
