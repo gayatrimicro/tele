@@ -465,18 +465,32 @@
           AOS.init();
     </script>
   <script type="text/javascript">
-  var lastScrollTop = 0;
-  var x=-100;
+  var lastScrollTop = 20000;
+  var x=-50;
 $(window).scroll(function(event){
+  var wid = $(window).width();
    var st = $(this).scrollTop();
+   console.log('st='+st+', x='+x+', wid='+wid);
    if (st > lastScrollTop){
-    x+= 6;
-    $(".c-home-blocks__shape").css("margin-top",x);
-       console.log('Down');
+    if(st >1000 && st<1700 && wid>768){
+        x+= 8;
+        $(".c-home-blocks__shape").css("margin-top",x);
+        }
+        if(st >1000& st<1700 && wid<768){
+        x+= 5;
+        $(".c-home-blocks__shape").css("margin-top",x);
+        }
    } else {
-    x-= 6;
+    if(st >2300 && st<3000 && wid>768)
+    {
+      x-= 8;
     $(".c-home-blocks__shape").css("margin-top",x);
-     console.log('Up');
+   } 
+   if(st >1000 && st<1700 && wid<768)
+    {
+      x-= 5;
+    $(".c-home-blocks__shape").css("margin-top",x);
+   }   
    }
    lastScrollTop = st;
 });

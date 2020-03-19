@@ -12,8 +12,14 @@
 {
   padding-top: 600px;
 }
+.is-transparent:not(:hover) .c-expand-arrow__path--masthead-parent {
+    fill: #000;
+}
 
-
+.c-home-blocks__shape--first
+{
+  opacity: .25 !important;
+}
 
 .sec_slid img, svg {
     max-width: unset;
