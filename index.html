@@ -325,7 +325,7 @@
                </div>
             </section>
             
-            <!-- <div class="c-home-blocks__shape c-home-blocks__shape--first"><img alt="" src="assets/static/parallelogram-green.b21028e.a6210f0baae3efabe9959cbe7061c37c.svg" class="c-home-blocks__shape-image c-home-blocks__shape-image--first g-image" style="transform:translateY(0%);"></div> -->
+            <div class="c-home-blocks__shape c-home-blocks__shape--first"><img alt="" src="assets/static/parallelogram-green.b21028e.a6210f0baae3efabe9959cbe7061c37c.svg" class="c-home-blocks__shape-image c-home-blocks__shape-image--first g-image" style="transform:translateY(0%);"></div><br><br>
             <div class="c-home-blocks__shape c-home-blocks__shape--second"><img alt="" src="assets/static/parallelogram-light-blue.b21028e.bf108266bbd4ce934196105afa979463.svg" class="c-home-blocks__shape-image c-home-blocks__shape-image--first g-image" style="transform:translateY(0%);"></div>
          </div>
          <div class="c-home__intro c-home__intro--outro">
@@ -466,7 +466,7 @@
     </script>
   
 
-
+<!-- 
   <script type="text/javascript">
   $('#elem').on('DOMMouseScroll mousewheel', function (e) {
   if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
@@ -480,6 +480,41 @@
     $(".c-home-blocks__shape").removeClass("down-move");
     console.log('Up');
   }
+});
+</script> -->
+
+<script type="text/javascript">
+  var lastScrollTop = 20000;
+$(window).scroll(function(event){
+  var wid = $(window).width();
+   var st = $(this).scrollTop();
+   var numstr = st.toString();
+    numstr = numstr.substring(0, 2);
+   var strg=numstr.trim();
+   var mart=parseInt(strg);
+   console.log('st='+st+', mart='+mart+', wid='+wid);   
+    if (st > lastScrollTop){
+    
+    if(st >1000 && st<3000 && wid>768){
+        $(".c-home-blocks__shape").css("margin-top",mart+"rem");
+        }
+        else
+        {
+          return false;
+        }
+   } 
+   else {
+    
+    if(st >1000 && st<3000 && wid>768)
+    {
+      $(".c-home-blocks__shape").css("margin-top",mart+"rem");
+    }
+   else
+    {
+      return false;
+    }  
+   }
+   lastScrollTop = st;
 });
 </script>
   </body>
